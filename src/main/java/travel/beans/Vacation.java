@@ -33,22 +33,22 @@ public class Vacation {
 	@Column(name="ID")
 	private int id;
 	
-	@Size(min = 1, max = 50)
+	@Size(min = 1, max = 50, message = "name must be between 1 and 50 characters.")
 	@Column(name="NAME")
 	private String name;
 	
 	@Size(min = 2, max = 50)
-	@NotBlank
+	@NotBlank(message = "Please enter a destination.")
 	@Column(name="DESTINATION")
 	private String destination;
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	@NotNull
+	@NotNull(message = "Please enter a departure date.")
 	@Column(name="STARTDATE")
 	private LocalDate startDate;
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd") 
-	@NotNull
+	@NotNull(message = "Please enter a return date.")
 	@Column(name="ENDDATE")
 	private LocalDate endDate;
 	

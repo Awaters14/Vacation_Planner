@@ -20,30 +20,6 @@
 				
 		<title>Plan Your Trip</title>
 
-<script>
-	function checkForm(form) {
-		// validation fails if the input is blank
-		if (form.destination.value == "") {
-			alert("Error: Please eneter a destination");
-			form.street.focus();
-			return false;
-		}
-		if (form.startDate.value == "") {
-			alert("Error: Please eneter a departure date");
-			form.street.focus();
-			return false;
-		}
-
-		if (form.endDate.value == "") {
-			alert("Error: Please eneter a return date");
-			form.street.focus();
-			return false;
-		}
-
-		return true;
-	}
-</script>
-
 
 </head>
 
@@ -75,15 +51,7 @@
 	</header>
 
 	<!-- Main -->
-	
-	<h1>Plan Your Trip</h1>
-	
-	<form th:object="${newVacation}" th:action="@{/vacations/{id}(id=${newVacation.id})}" method=POST>
-		Vacation Name: <input name="name" size="20" th:field="*{name}"> <br />
-		Destination: <input name="destination" size="20" th:field="*{destination}"> <br />
-		Departure: <input name="startDate" type="date" th:field="*{startDate}"><br />
-		Return: <input name="endDate" type="date" th:field="*{endDate}"><br />
-		<input name="submit" type="submit" value="submit" />
+
 	</form>
 	
 	<!-- Main -->	
@@ -92,7 +60,7 @@
 		<footer class="text-center text-lg-start">
 			<!-- Copyright -->
 			<div class="text-center p-3">
-				@2020 Copyright: <a href="/"><strong>Triply</strong></a>
+				@2022 Copyright: <a href="/"><strong>Triply</strong></a>
 			</div>
 			<!-- Copyright -->
 		</footer>

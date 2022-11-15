@@ -7,7 +7,7 @@ import org.springframework.core.SpringVersion;
 @SpringBootApplication
 public class VacationPlannerApplication {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		SpringApplication.run(VacationPlannerApplication.class, args);
 	}
 
