@@ -23,10 +23,6 @@
 
 	<style>
 	
-	.label {
-	background: #22577a;
-	}
-	
 	</style>
 
 	<body>
@@ -53,60 +49,36 @@
 	</header>
 
 	<!-- Main -->
-	<div class="container">
-		<div class="row form">
-			<div class="col-lg">
-				<h1>My Trips</h1>
-			</div>
-		</div>
-	</div>
+	
+	<h1>My Trips</h1>
+	
+	<form>
+		<table>
+			<tr th:each="currentVacations : ${vacation}">
+				<td th:text="${currentVacations.name}" />
+				<td th:text="${currentVacations.destination}" />
+				<td th:text="${currentVacations.startDate}" />
+				<td th:text="${currentVacations.endDate}" />
+				
+				<td><a th:href="@{/vacations/{id}(id=${currentVacations.id})}">Edit</a></td>
+				<td><a th:href="@{/vacations/delete/{id}(id=${currentVacations.id})}">Delete</a></td>
+				<td><a th:href="@{/details/{id}(id=${currentVacations.id})}">Details</a></td>
+			</tr>
+						
+		</table>
+		
+		<a class="btn btn-lg btn-primary" href="/vacations/new" role="button">ADD NEW</a></p>
+		
 
-	<div class="container">
-		<div class="row form">
-			<div class="col-lg">
-				<table class="table">
-					<thead class="label">
-						<tr>
-							<th scope="col" style="color: white;">Name</th>
-							<th scope="col" style="color: white;">Destination</th>
-							<th scope="col" style="color: white;">Departure</th>
-							<th scope="col" style="color: white;">Return</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-						<tr th:each="currentVacations : ${vacation}">
-							<td th:text="${currentVacations.name}" />
-							<td th:text="${currentVacations.destination}" />
-							<td th:text="${currentVacations.startDate}" />
-							<td th:text="${currentVacations.endDate}" />
-
-							<td><a
-								th:href="@{/vacations/{id}(id=${currentVacations.id})}">Edit</a></td>
-							<td><a
-								th:href="@{/vacations/delete/{id}(id=${currentVacations.id})}">Delete</a></td>
-							<td><a th:href="@{/details/{id}(id=${currentVacations.id})}">Details</a></td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
-
-	<div class="container">
-		<div class="row form">
-			<div class="col-lg">
-				<a class="btn btn-success" href="/vacations/new" role="button">ADD VACATION</a>
-			</div>
-		</div>
-	</div>
+	</form>
+	
 	<!-- Main -->	
 			
 		<!-- Footer -->
 		<footer class="text-center text-lg-start">
 			<!-- Copyright -->
 			<div class="text-center p-3">
-				@2022 Copyright: <a href="/"><strong>Triply</strong></a>
+				@2020 Copyright: <a href="/"><strong>Triply</strong></a>
 			</div>
 			<!-- Copyright -->
 		</footer>
